@@ -10,11 +10,7 @@ class AmenitiesBuilder
     {
         // other code left out
 
-        $amenities = $request->getQuery('amenities', [], []);
-        if (!empty($amenities) && !is_array($amenities)) {
-            $amenities = htmlspecialchars($amenities);
-            $amenities = explode(',', $amenities);
-        }
+        $amenities = $this->processAmenities($request);
         $leisure = $request->getQuery('leisure', [], []);
         if (!empty($leisure) && !is_array($leisure)) {
             $leisure = htmlspecialchars($leisure);
@@ -27,5 +23,20 @@ class AmenitiesBuilder
             'amenities' => $amenities,
             'leisure' => $leisure,
         ];
+    }
+
+    /**
+     * @param $request
+     * @return array|string
+     */
+    private function processAmenities($request)
+    {
+        $amenities = $request->getQuery('amenities', [], []);
+        if (!empty($amenities) && !is_array($amenities)) {
+            $amenities = htmlspecialchars($amenities);
+            $amenities = explode(',', $amenities);
+        }
+
+        return $amenities;
     }
 }
