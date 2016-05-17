@@ -29,7 +29,7 @@ class AmenitiesBuilder
         ];
     }
 
-    public function versionOneBranched($request)
+    public function versionTwoByDeveloperB($request)
     {
         // other code left out
 
@@ -43,12 +43,30 @@ class AmenitiesBuilder
             $leisure = htmlspecialchars($leisure);
             $leisure = explode(',', $leisure);
         }
+        $utilities = $request->getQuery('utilities', [], []);
+        if (!empty($utilities) && !is_array($utilities)) {
+            $utilities = htmlspecialchars($utilities);
+            $utilities = explode(',', $utilities);
+        }
+        $rules = $request->getQuery('rules', [], []);
+        if (!empty($rules) && !is_array($rules)) {
+            $rules = htmlspecialchars($rules);
+            $rules = explode(',', $rules);
+        }
+        $activities = $request->getQuery('activities', [], []);
+        if (!empty($activities) && !is_array($activities)) {
+            $activities = htmlspecialchars($activities);
+            $activities = explode(',', $activities);
+        }
 
         // other code left out
 
         return [
             'amenities' => $amenities,
             'leisure' => $leisure,
+            'utilities' => $utilities,
+            'rules' => $rules,
+            'activities' => $activities,
         ];
     }
 }
