@@ -12,12 +12,18 @@ class AmenitiesBuilder
 
         $amenities = $this->getAmenity($request, 'amenities');
         $leisure = $this->getAmenity($request, 'leisure');
+        $utilities = $this->getAmenity($request, 'utilities');
+        $rules = $this->getAmenity($request, 'rules');
+        $activities = $this->getAmenity($request, 'activities');
 
         // other code left out
 
         return [
             'amenities' => $amenities,
             'leisure' => $leisure,
+            'utilities' => $utilities,
+            'rules' => $rules,
+            'activities' => $activities,
         ];
     }
 
