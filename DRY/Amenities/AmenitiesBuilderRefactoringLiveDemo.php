@@ -36,7 +36,7 @@ class AmenitiesBuilder
     {
         $amenities = $request->getQuery($amenityName, [], []);
         if (!empty($amenities) && !is_array($amenities)) {
-            $amenities = htmlspecialchars($amenities);
+            $amenities = htmlspecialchars($amenities, ENT_HTML5);
             $amenities = explode(',', $amenities);
         }
 
