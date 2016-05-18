@@ -10,7 +10,7 @@ class AmenitiesBuilder
     {
         // other code left out
 
-        $amenities = $this->getAmenity($request);
+        $amenities = $this->getAmenity($request, 'amenities');
         $leisure = $request->getQuery('leisure', [], []);
         if (!empty($leisure) && !is_array($leisure)) {
             $leisure = htmlspecialchars($leisure);
@@ -27,11 +27,12 @@ class AmenitiesBuilder
 
     /**
      * @param $request
+     * @param $amenityName
      * @return array|string
      */
-    private function getAmenity($request)
+    private function getAmenity($request, $amenityName)
     {
-        $amenities = $request->getQuery('amenities', [], []);
+        $amenities = $request->getQuery($amenityName, [], []);
         if (!empty($amenities) && !is_array($amenities)) {
             $amenities = htmlspecialchars($amenities);
             $amenities = explode(',', $amenities);
