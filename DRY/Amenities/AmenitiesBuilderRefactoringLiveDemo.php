@@ -11,11 +11,7 @@ class AmenitiesBuilder
         // other code left out
 
         $amenities = $this->getAmenity($request, 'amenities');
-        $leisure = $request->getQuery('leisure', [], []);
-        if (!empty($leisure) && !is_array($leisure)) {
-            $leisure = htmlspecialchars($leisure);
-            $leisure = explode(',', $leisure);
-        }
+        $leisure = $this->getAmenity($request, 'leisure');
 
         // other code left out
 
