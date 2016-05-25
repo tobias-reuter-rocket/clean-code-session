@@ -28,20 +28,20 @@
   - change log
   - structuring comments, if it get's so complicated that you need to do this, it's a sign to refactor
 
-
+```
     while ((line = in.readLine()) != null) {
         ...
     } //while
-
+```
 
 
   - commented out code (!!!)
   - non-local comments:
 
-
+```
     // Default: 8082
     public void setFitnessePort(int fitnessePort)
-
+```
 
   - TMI - like explaining base64
   - position markers
