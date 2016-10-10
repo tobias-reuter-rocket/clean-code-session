@@ -1,0 +1,14 @@
+<?php
+
+if (empty($campsites)) {
+    return;
+}
+
+?>
+
+<section class="rooms col-xs-12">
+    <h2><?= $t->trans('Camping we love'); ?></h2>
+    <?php foreach ($campsites as $campsite): ?>
+        <?php $this->partial('location/block/campsite', $campsite) ?>
+    <?php endforeach; ?>
+</section>

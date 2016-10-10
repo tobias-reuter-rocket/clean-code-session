@@ -1,0 +1,18 @@
+<section data-bg="../../img/v2/hero-home.jpg" class="main">
+    <div class="main-container row">
+        <div class="main-motto col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+            <h1><?= $homepageTitle; ?></h1>
+            <h2><?= $homepageSubtitle; ?></h2>
+        </div>
+        <div class="main-form col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-left">
+            <?php $this->partial('partial/search_form', ['$formRenderer' => $formRenderer, 'form' => $form])?>
+        </div>
+    </div>
+</section>
+
+
+<?php $this->widget('TopDestinationWidget')?>
+
+<?php $this->widget('FeaturedCampsitesWidget', ['limit' => 4])?>
+
+<div id="locale" data-locale="<?= $locale ?>"></div>

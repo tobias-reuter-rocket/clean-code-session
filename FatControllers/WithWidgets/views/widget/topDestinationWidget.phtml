@@ -1,0 +1,50 @@
+<?php
+
+if (empty($cities)) {
+    return;
+}
+
+?>
+
+<section class="top-destinations <?= isset($class) ? $class : '';  ?>">
+    <header>
+        <?= $title ?>
+        <h1><?= $description ?></h1>
+    </header>
+    <div class="destinations-container">
+        <?php
+        $rowsize = 3;
+        $count = count($cities);
+        $cities = array_values($cities);
+        foreach ($cities as $index => $city):
+            $slug = $city['slug'];
+
+            $size = $index === 0 ? 8 : 4;
+
+            if ($index === $count - 1) {
+                $size = $size * ($rowsize - ($count % $rowsize));
+            }
+            ?>
+            <div class="destination-wrapper col-md-<?= $size ?>">
+                <a href="<?= $city['url']; ?>" data-bg="<?= $city['photo'] ?>" class="destination"
+                   data-datalayer="<?= $city['dataLayer'] ?>">
+                    <div class="overlay">
+                        <div class="info">
+                    <span class="number <?= $slug ?>"><?= $t->trans('|%count% Camping in %city%|%count% Campings in %city%', [
+                            'city' => '<span class="city">' . $city['name'] . '</span>',
+                            'count' => $city['properties']
+                        ]) ?></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php if (!empty($button)) :?>
+    <div class="testimonials-button-wrapper col-md-offset-4 col-md-4 col-xs-12">
+        <button class="btn btn-testimonials" onclick="window.scrollTo(0,0)"><?= $button; ?></button>
+    </div>
+    <?php endif;?>
+</section>
+
+
