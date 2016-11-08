@@ -1,7 +1,5 @@
 <?php
-
 namespace Common\AttachmentManager;
-
 
 /**
  * Class AttachmentManager
