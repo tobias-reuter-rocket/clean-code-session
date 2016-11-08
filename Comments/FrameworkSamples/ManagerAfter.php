@@ -1,5 +1,4 @@
 <?php
-
 namespace Common\AttachmentManager;
 
 class AttachmentManager
@@ -13,7 +12,7 @@ class AttachmentManager
      * @throws DuplicateException
      * @return Attachment
      */
-    public function create(File $file, $groupCode = 'catalog', $attachmentId = null)
+    public function createAndSave(File $file, $groupCode = 'catalog', $attachmentId = null)
     {
         if ($this->attachmentService->isDuplicate($attachmentId)) {
             throw new DuplicateException(sprintf('attachment with id %d already exists', $attachmentId));
@@ -21,7 +20,7 @@ class AttachmentManager
 
         $attachment = $this->buildAttachmentFromUploadedFile($file, $groupCode, $attachmentId);
 
-        $fileAttachments = $this->fileAttachmentFactory->getStrategy($attachment)->create();
+        $fileAttachments = $this->fileAttachmentFactory->getStrategy($attachment)->saveToFile();
 
         return $this->saveAttachmentAfterSavingFile($attachment, $fileAttachments);
     }
@@ -45,3 +44,4 @@ class AttachmentService
         return $this->count(['id' => $attachmentId]) > 0;
     }
 }
+

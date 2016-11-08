@@ -2,7 +2,10 @@
 
 namespace Common\StateMachine\Service\StateMachine;
 
+interface LockAdapterInterface{}
+
 /**
+ *
  * Class StateMachine
  * @package Common\StateMachine\Service\StateMachine
  */
@@ -51,6 +54,11 @@ class StateMachine
     }
 
     // ...
+
+    /**
+     * @var LockAdapterInterface
+     */
+    protected $lockAdapter;
 
     /**
      * Sets lock adapter
