@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var integer $registeredUsers
+ * @var array $orders
+ * @var \Common\Localisation\Translator\TranslatorInterface $t
+ */
+?>
+<!-- Small horizontal padding, bordered, without right border, top aligned text -->
+<div class="stat-cell col-md-4 padding-sm-hr bordered valign-top">
+    <!-- Small padding, without top padding, extra small horizontal padding -->
+    <h4 class="padding-sm no-padding-t padding-xs-hr">
+        <i class="fa fa-cloud-upload text-primary"></i>
+        <?= $t('widget.simple_counts.header')?>
+    </h4>
+    <!-- Without margin -->
+    <ul class="list-group no-margin">
+        <li class="list-group-item no-border-hr padding-xs-hr no-bg no-border-radius">
+            <?= $t('widget.simple_counts.users')?> <span class="label label-pa-purple pull-right"><?= $registeredUsers?></span>
+        </li> <!-- / .list-group-item -->
+        <!-- Without left and right borders, extra small horizontal padding, without background -->
+        <li class="list-group-item no-border-hr padding-xs-hr no-bg">
+            <?= $t('widget.simple_counts.placed_orders')?> <span class="label label-danger pull-right"><?= $orders['placed']?></span>
+        </li> <!-- / .list-group-item -->
+        <li class="list-group-item no-border-hr no-border-b padding-xs-hr no-bg">
+            <?= $t('widget.simple_counts.new_orders')?> <span class="label label-success pull-right"><?= $orders['initialized']?></span>
+        </li> <!-- / .list-group-item -->
+        <li class="list-group-item no-border-hr no-border-b padding-xs-hr no-bg">
+            <?= $t('widget.simple_counts.items')?> <span class="label label-success pull-right"><?= $itemsCount?></span>
+        </li>
+        <?php $this->partial('widget/partial/simpleCountWidgetPartial'); ?>
+    </ul>
+</div> <!-- /.stat-cell -->
