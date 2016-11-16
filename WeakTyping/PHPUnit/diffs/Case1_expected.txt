@@ -1,0 +1,11 @@
+Array &0 (
+    'Guest' => Array &1 ()
+    'User' => Array &2 ()
+    'Admin' => Array &3 (
+        0 => 'Guest'
+        1 => 'User'
+    )
+    'dummy' => Array &4 (
+        0 => 'User'
+    )
+)

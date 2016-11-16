@@ -1,0 +1,21 @@
+Array &0 (
+    'imported_files' => Array &1 (
+        0 => '/vagrant/tests/unit/Common/Config/Examples/config.ini'
+    )
+    'instance' => null
+    'module' => null
+    'section' => Array &2 (
+        'ini' => 'ini'
+        'num' => '10.2'
+        'bool' => ''
+        'string' => 'string'
+        'arr' => Array &3 (
+            0 => 'Lorem'
+            1 => 'Ipsum'
+        )
+        'assoc' => Array &4 (
+            'lorem' => 'Lorem'
+            'ipsum' => 'Ipsum'
+        )
+    )
+)

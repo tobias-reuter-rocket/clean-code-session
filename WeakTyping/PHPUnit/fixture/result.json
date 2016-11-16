@@ -1,0 +1,27 @@
+{
+  "name": "XX Galactic Empire Retreat",
+  "original_name": "XX Galactic Empire Retreat",
+  "website": null,
+  "prefered_payment_method": false,
+  "value_preposition": 0,
+  "pay_later": null,
+  "shower_available_fee": 0,
+  "amenities": [
+    "Swimming in natural water",
+    "Renewable Energy",
+    "Free wifi"
+  ],
+  "utilities": [
+    "Gas bottle exchange",
+    "Internet Access"
+  ],
+  "separate_pitches": true,
+  "car_free": false,
+  "car_permitted": true,
+  "title": "Galactic Empire Retreat",
+  "_city": {
+    "name": "Berlin",
+    "slug": "berlin",
+    "timezone": "GMT+1"
+  }
+}
